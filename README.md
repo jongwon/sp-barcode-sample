@@ -9,3 +9,9 @@
  ```
  
  ![Barcode Image](./img/sample.png?raw=true "Sample Barcode Image")
+ 
+ 
+ 그 밖에 추가로 사용 가능한 argument
+ * width : 바코드 이미지의 너비
+ * height : 바코드 이미지의 높이
+ * fontSize : 바코드 문자 크기 (문자 크기를 0으로 설정하면 코드가 보이지 않는다.)

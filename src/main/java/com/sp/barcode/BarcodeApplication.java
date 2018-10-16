@@ -74,17 +74,17 @@ public class BarcodeApplication {
             Graphics graphics = image.getGraphics();
             graphics.drawImage(image, 0, 0, null);
 
+            if(fontSize>0) {
+                Font f = new Font("Arial", Font.PLAIN, fontSize);
+                FontRenderContext frc = image.getGraphics().getFontMetrics().getFontRenderContext();
+                Rectangle2D rect = f.getStringBounds(code, frc);
 
-            Font f = new Font("Arial", Font.PLAIN, fontSize);
-            FontRenderContext frc = image.getGraphics().getFontMetrics().getFontRenderContext();
-            Rectangle2D rect = f.getStringBounds(code, frc);
-
-            graphics.setFont(f);
-            graphics.setColor(Color.BLACK);
-            graphics.drawString(code,
-                    (int)Math.ceil((image.getWidth()/2)-((rect.getWidth())/2)),
-                    (int)Math.ceil(image.getHeight()  - (rect.getHeight()- 2*margin)));
-
+                graphics.setFont(f);
+                graphics.setColor(Color.BLACK);
+                graphics.drawString(code,
+                        (int) Math.ceil((image.getWidth() / 2) - ((rect.getWidth()) / 2)),
+                        (int) Math.ceil(image.getHeight() - (rect.getHeight() - 2 * margin)));
+            }
             graphics.dispose();
             ImageIO.write(image, "png", bout);
 
